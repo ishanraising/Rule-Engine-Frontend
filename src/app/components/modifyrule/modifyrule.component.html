@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Modify Rule</h2>
+    <form [formGroup]="ruleForm" (ngSubmit)="onSubmit()">
+      
+      <!-- First Rule Dropdown -->
+      <div class="form-group">
+        <label for="rule1">Select First Rule:</label>
+        <select id="rule1" formControlName="rule1" class="form-control">
+          <option value="" disabled>Select a rule</option>
+          <option *ngFor="let rule of rules" [value]="rule.ruleString">{{ rule.ruleString }}</option>
+        </select>
+        <div *ngIf="ruleForm.get('rule1')?.invalid && ruleForm.get('rule1')?.touched" class="text-danger">
+          Please select the first rule.
+        </div>
+      </div>
+  
+      <!-- Operator Field -->
+      <div class="form-group">
+        <label for="operator">Operator:</label>
+        <input type="text" id="operator" formControlName="operator" class="form-control" placeholder="AND or OR" />
+        <div *ngIf="ruleForm.get('operator')?.invalid && ruleForm.get('operator')?.touched" class="text-danger">
+          Operator must be either AND or OR.
+        </div>
+      </div>
+  
+      <!-- Second Rule Dropdown -->
+      <div class="form-group">
+        <label for="rule2">Select Second Rule:</label>
+        <select id="rule2" formControlName="rule2" class="form-control">
+          <option value="" disabled>Select a rule</option>
+          <option *ngFor="let rule of rules" [value]="rule.ruleString">{{ rule.ruleString }}</option>
+        </select>
+        <div *ngIf="ruleForm.get('rule2')?.invalid && ruleForm.get('rule2')?.touched" class="text-danger">
+          Please select the second rule.
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="ruleForm.invalid">Modify and Save Rule</button>
+  
+      <!-- Success and Error Messages -->
+      <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+    </form>
+  </div>
+  

@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Evaluate Rule</h2>
+  <form [formGroup]="ruleForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Rule Dropdown -->
+    <div class="mb-3">
+      <label for="rule">Select Rule:</label>
+     <select class="form-control" formControlName="rule" (change)="onRuleChange()">
+  <option value="" disabled>Select a rule</option>
+  <option *ngFor="let rule of rules" [value]="rule.ruleString">{{ rule.ruleString }}</option>
+</select>
+      <div *ngIf="ruleForm.get('rule')?.invalid && ruleForm.get('rule')?.touched" class="text-danger">
+        Please select a rule.
+      </div>
+    </div>
+
+    <!-- Dynamic Fields based on Rule -->
+    <div class="mb-3" *ngIf="formFields.department">
+      <label for="department">DepartmentNo:</label>
+      <input type="text" class="form-control" formControlName="department" placeholder="Enter department">
+    </div>
+
+    <div class="mb-3" *ngIf="formFields.age">
+      <label for="age">Age:</label>
+      <input type="number" class="form-control" formControlName="age" placeholder="Enter age">
+    </div>
+
+    <div class="mb-3" *ngIf="formFields.salary">
+      <label for="salary">Salary:</label>
+      <input type="number" class="form-control" formControlName="salary" placeholder="Enter salary">
+    </div>
+
+    <div class="mb-3" *ngIf="formFields.experience">
+      <label for="experience">Experience:</label>
+      <input type="number" class="form-control" formControlName="experience" placeholder="Enter experience">
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="ruleForm.invalid">Evaluate Rule</button>
+
+    <!-- Success and Error Messages -->
+    <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+  </form>
+</div>
