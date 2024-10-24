@@ -26,7 +26,7 @@ Follow these steps to install and run the Angular frontend application:
 Clone the repository to your local machine.
 
 ```bash
-git clone https://github.com/ishanraising/Realtime-Weather-App-Frontend
+git clone https://github.com/ishanraising/Rule-Engine-Frontend
 ```
 
 ### Step 2 : Open the project in Vs Code
@@ -48,14 +48,14 @@ To run the application on your local machine, use the following command in the t
 ```bash
 ng serve
 ```
-### How To Use Applicatio ###
- **format to create rule** 
-
- - condition 1 + operator + condition 2
+### How To Use Application ###
+ **Format to create rule** 
+- Condition 1 + Operator + Condition 2
 
  **How to write condition**
-  - parameter [space] operator [space] value
-  - example : age > 3
+  - Parameter [space] Operator [space] Value
+ - Note : Parameters allowed - age, salary, department and experience. All parameters are numeric and consider department as department number.
+  - Example : age > 3
  **Rule Example**
   - Condition 1 : age > 30
   - Operator    : AND
@@ -93,12 +93,3 @@ For any questions or feedback, feel free to reach out to me:
 - [Angular Documentation](https://angular.io/docs)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 
-
-
-
-
-
-
-=======
-# Realtime-Weather-App-Frontend
->>>>>>> 03386c7ed86b71a4c48d61c378d8afe6a569493b

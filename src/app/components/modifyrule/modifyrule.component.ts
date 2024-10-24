@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class ModifyRuleComponent implements OnInit {
   ruleForm: FormGroup;
   rules: any[] = []; // This will hold the list of rules from the backend
-  successMessage: string = 'Rule Merged Successfully';
+  successMessage: string = '';
   errorMessage: string = '';
 
   constructor(private fb: FormBuilder, private ruleService: RuleService) {
@@ -59,7 +59,7 @@ export class ModifyRuleComponent implements OnInit {
       
       this.ruleService.createRule({ rule: newRule }).subscribe(
         (response) => {
-          this.successMessage = 'Rule created successfully!';
+          this.successMessage = 'Rule merged Successfully';
           this.errorMessage = '';
           this.ruleForm.reset();
         },
