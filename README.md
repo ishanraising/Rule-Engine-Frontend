@@ -51,17 +51,16 @@ To run the application on your local machine, use the following command in the t
 ng serve
 ```
 ### How To Use Application ###
- **Format to create rule** 
-- Condition 1 + Operator + Condition 2
-
  **How to write condition**
   - Parameter [space] Operator [space] Value
  - Note : Parameters allowed - age, salary, department and experience. All parameters are numeric and consider department as department number.
-  - Example : age > 3
- **Rule Example**
+  - Example : age > 3     
+ **Format to create rule** 
+- Condition 1 + Operator + Condition 2
+- Rule Example : age > 30 AND salary > 5000
   - Condition 1 : age > 30
   - Operator    : AND
-  - Condition 2 : salary > 5000        
+  - Condition 2 : salary > 5000   
 
 ### Key Directories and Files
 
