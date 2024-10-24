@@ -1,7 +1,7 @@
 
 # Rule Engine Application Frontend
-    
-    This project is the frontend for a rule engine application, built using Angular. The frontend allows users to create, modify, and evaluate rules based on user attributes like age, department, income, and spending. It provides a simple UI for interacting with the rule engine.
+
+This project is the frontend for a rule engine application, built using Angular. The frontend allows users to create, modify, and evaluate rules based on user attributes like age, department, income, and spending. It provides a simple UI for interacting with the rule engine.
 
 ## Features
 - Create new rules using form fields.
@@ -54,7 +54,9 @@ ng serve
  **How to write condition**
   - Parameter [space] Operator [space] Value
  - Note : Parameters allowed - age, salary, department and experience. All parameters are numeric and consider department as department number.
-  - Example : age > 3     
+  - Example : age > 3
+
+
  **Format to create rule** 
 - Condition 1 + Operator + Condition 2
 - Rule Example : age > 30 AND salary > 5000
